@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || "";
 
 export const getMyNotes = async () => {
   const response = await axios.get(`${API}/api/v1/notes/my-notes`, {

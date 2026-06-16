@@ -5,6 +5,7 @@ import { noteRoute } from "./routes/noteRoutes.js";
 import { userRoute } from "./routes/userRoutes.js";
 
 export const app = express();
+app.set("trust proxy", 1);
 
 const allowedOrigins = [
   "http://localhost:5173",
