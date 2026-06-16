@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../api/authApi";
 export default function SignUpForm() {
+  // console.log(import.meta.env.VITE_API_URL);
+  // console.log("Hello");
   const navigate = useNavigate();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
