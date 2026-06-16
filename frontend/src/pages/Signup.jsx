@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import SignupHeader from "../features/signUp/SignupHeader";
 import SignUpForm from "../features/signUp/SignUpForm";
 

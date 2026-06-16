@@ -9,9 +9,14 @@ export const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://notes-taking-app-mu-pied.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "https://notes-taking-app-mu-pied.vercel.app",
+    origin: allowedOrigins,
     credentials: true,
   }),
 );

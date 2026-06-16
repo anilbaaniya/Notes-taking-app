@@ -1,6 +1,6 @@
 import LoginHeader from "../features/login/LoginHeader";
 import LoginForm from "../features/login/LoginForm";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
   return (
