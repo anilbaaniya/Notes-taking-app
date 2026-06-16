@@ -6,9 +6,6 @@ import { userRoute } from "./routes/userRoutes.js";
 
 export const app = express();
 
-app.use(express.json());
-app.use(cookieParser());
-
 const allowedOrigins = [
   "http://localhost:5173",
   "https://notes-taking-app-mu-pied.vercel.app",
@@ -20,6 +17,8 @@ app.use(
     credentials: true,
   }),
 );
+app.use(express.json());
+app.use(cookieParser());
 
 // test middleware
 app.use((req, res, next) => {
