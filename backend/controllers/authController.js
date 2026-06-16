@@ -18,8 +18,8 @@ const createSendToken = (user, statusCode, res) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
     ),
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    secure: true, // must be TRUE on production (HTTPS)
+    sameSite: "none", // VERY IMPORTANT for Vercel ↔ Render
   };
 
   res.cookie("jwt", token, cookieOptions);
@@ -70,12 +70,10 @@ export const login = async (req, res) => {
 
     // check if email and password exist
     if (!email || !password) {
-      return res
-        .status(400)
-        .json({
-          status: "fail",
-          message: "Please provide email and password.",
-        });
+      return res.status(400).json({
+        status: "fail",
+        message: "Please provide email and password.",
+      });
     }
 
     // check if user exist and password is correct
